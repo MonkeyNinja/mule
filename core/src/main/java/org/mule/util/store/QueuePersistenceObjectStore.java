@@ -273,7 +273,7 @@ public class QueuePersistenceObjectStore<T extends Serializable> extends Abstrac
         {
             FileOutputStream out = new FileOutputStream(outputFile);
             out.write(muleContext.getObjectSerializer().serialize(value));
-            out.flush();
+            out.close();
         }
         catch (SerializationException se)
         {
